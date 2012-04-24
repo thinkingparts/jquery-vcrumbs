@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> VCrumbs - Demo</TITLE>
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="../jquery.cookie.js" type="text/javascript"></script>
+  <script src="../jquery.vcrumbs.min.js" type="text/javascript"></script>
+  <script>
+	$(document).ready(function(){
+		$("#bcrumbs").vcrumbs({
+			'key':'demo',
+			'separator':'>>'
+		});
+	});
+  </script>
+ </HEAD>
+ <BODY>
+  <div id="bcrumbs"></div>
+  <br/>
+  <br/>
+  <a href="page1.html">Open Page1</a>
+ </BODY>
+</HTML>
