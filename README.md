@@ -39,6 +39,16 @@ $('element').vcrumbs({
 		});
 ```
 
+Make last label a clickable link
+
+```ruby
+$('element').vcrumbs({
+      'key' : 'pageid',
+      'islastlink': true
+	});
+```
+
+
 ##Options
 
 ```ruby
