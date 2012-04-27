@@ -10,8 +10,7 @@
 (function( $ ){
   $.fn.vcrumbs = function(options) {
    var settings = $.extend( {
-      'separator' : '&gt;',
-      'islastlink' : false
+      'separator' : '&gt;'
     }, options);	
 	var vkey = options.key;	
 	var vlinks = "";
@@ -20,7 +19,6 @@
 	}else{
 		var vseparator = $.cookie('vcrumbs_separator');
 		var vpath = $.cookie('vcrumbs_path');
-		var vlastlink = $.cookie('vcrumbs_lastlink');
 		var vtitle = "";
 		if(options.title != undefined && options.title != null){
 			vtitle = options.title;
@@ -33,13 +31,6 @@
 		}else if(vseparator == undefined || vseparator == null){
 		  vseparator = settings.separator;
 		  $.cookie('vcrumbs_separator', vseparator,{path:'/'});
-		}
-		if(options.islastlink != undefined && options.islastlink != null){
-			vlastlink = options.islastlink;
-			$.cookie('vcrumbs_lastlink', vlastlink,{path:'/'});
-		}else if(vlastlink == undefined || vlastlink == null){
-			vlastlink = settings.islastlink;
-			$.cookie('vcrumbs_lastlink', vlastlink,{path:'/'});
 		}
 		if(vpath == undefined || vpath == null){
 			vpath = "`"+vkey+"~"+vtitle+"~"+window.location.pathname;
@@ -60,15 +51,9 @@
 		var clinks = vpath.split('`');
 		for(l=0; l<clinks.length; l++){
 			var lparams = clinks[l].split('~');
-			//vlinks += "<a href='"+lparams[2]+"'>"+lparams[1]+"</a>";
+			vlinks += "<a href='"+lparams[2]+"'>"+lparams[1]+"</a>";
 			if(l != clinks.length-1){
-				vlinks += "<a href='"+lparams[2]+"'>"+lparams[1]+"</a> "+vseparator+" ";
-			}else{
-				if(eval(vlastlink)){
-					vlinks += "<a href='"+lparams[2]+"'>"+lparams[1]+"</a>";
-				}else{
-					vlinks += lparams[1];					
-				}
+				vlinks += " "+vseparator+" ";
 			}
 		}
 	}

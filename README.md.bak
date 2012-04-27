@@ -62,11 +62,3 @@ Optional. Sets a separator between the breadcrumbs
 Default: ``` Text defined in the <TITLE> tag of current webpage ```
 
 Optional. Sets this value as the link title in breadcrumbs
-
-```ruby
-'islastlink' : true
-```
-
-Default: ``` false ```
-
-Optional. If set to true, makes the last label of breadcrumbs a link
